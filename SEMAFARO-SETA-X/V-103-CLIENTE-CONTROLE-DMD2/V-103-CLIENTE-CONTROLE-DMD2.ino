@@ -272,11 +272,11 @@ B apresenta <-
   // --- Configurações Iniciais ---
   void setup() {
       Serial.begin(9600);
-      dmd.setBrightness(255);
+      dmd.setBrightness(250);
       dmd.selectFont(Arial14);
       dmd.begin();
 
-      Serial.println("V-102-SERVIDOR-CONTROLE-MONO-DMD2:");
+      Serial.println("V-103-CLIENTE-CONTROLE-DMD2:");
 
       pinMode(bt1, INPUT);
       pinMode(bt2, INPUT);
@@ -293,13 +293,13 @@ B apresenta <-
   void loop() {
       readKey();
       //menu_controle();
-      imprimir();
-      //imprimir_6();
+      //imprimir();
+      imprimir_6();
       currentMillis = millis();
       if (currentMillis - startMillis >= 4 * period) {
           startMillis = currentMillis;
           //currentMillis = millis();
-          marcador_digito();
+          //marcador_digito();
       }
       if (!digitalRead(bt3)) {
           dmd.setPixel(3, 3, GRAPHICS_OFF);
@@ -308,56 +308,57 @@ B apresenta <-
   } //end loop
 
 // === readKey =====================================================================
-  void readKey() {
-      static boolean flag1 = 0, flag3 = 0, flag5 = 0;
-      if (digitalRead(bt1)) {
-          if (flag2 == 1) {
-              Serial.println("SELECIONA DIGITO!  ");
-              digito();
-              imprimir();
-          }
-          flag1 = 0x01;
-          flag2 = 0x00;
-          delay(10);
-      }
-      if (!digitalRead(bt1) && flag1) {
-          flag1 = 0x00;
-          flag2 = 0x01;
-          Serial.println("RESET FLAG BOTAO DIGITO");
-          delay(10);
-      }
-      if (digitalRead(bt2)) {
-          if (flag4 == 1) {
-              counter = counter + 1;
-              Serial.println("INCREMENTA!  ");
-              Serial.print(counter);
-              Serial.println(F("..."));
-              incrementa();
-              imprimir();
-          }
-          if (counter > 9) {
-              counter = -1;
-          }
-          flag3 = 0x01;
-          flag4 = 0x00;
-          delay(10);
-      }
-      if (!digitalRead(bt2) && flag3) {
-          flag3 = 0x00;
-          flag4 = 0x01;
-          Serial.println("RESET FLAG BOTAO INCREMENTA");
-          delay(10);
-      }
+    void readKey() {
+        static boolean flag1 = 0, flag3 = 0, flag5 = 0;
+        if (digitalRead(bt1)) {
+            if (flag2 == 1) {
+                Serial.println("SELECIONA DIGITO!  ");
+                digito();
+                imprimir();
+            }
+            flag1 = 0x01;
+            flag2 = 0x00;
+            delay(10);
+        }
+        if (!digitalRead(bt1) && flag1) {
+            flag1 = 0x00;
+            flag2 = 0x01;
+            Serial.println("RESET FLAG BOTAO DIGITO");
+            delay(10);
+        }
+        if (digitalRead(bt2)) {
+            if (flag4 == 1) {
+                counter = counter + 1;
+                Serial.println("INCREMENTA!  ");
+                Serial.print(counter);
+                Serial.println(F("..."));
+                incrementa();
+                imprimir();
+            }
+            if (counter > 9) {
+                counter = -1;
+            }
+            flag3 = 0x01;
+            flag4 = 0x00;
+            delay(10);
+        }
+        if (!digitalRead(bt2) && flag3) {
+            flag3 = 0x00;
+            flag4 = 0x01;
+            Serial.println("RESET FLAG BOTAO INCREMENTA");
+            delay(10);
+        }
 
-  } // readKey
+    } // readKey
 
 // === marcador_digito =============================================================
-  void marcador_digito() {
+    void marcador_digito() {
       dmd.setPixel(3, 3, GRAPHICS_OFF);
-  } //end marcador_digito
+
+    } //end marcador_digito
 
 // === imprimir_6 ==================================================================
-  void imprimir_6() {
+    void imprimir_6() {
       dmd.fillScreen(true);
       delay(5000);
       dmd.clearScreen();
@@ -385,10 +386,10 @@ B apresenta <-
       box6.print(' ');
       box6.print(counter);
       box6.println(F("..."));
-  }
+    }
 
 // === imprimir ====================================================================
-void imprimir() {
+  void imprimir() {
     Serial.println(" ");
     Serial.print("DADOS DENTRO DO DIGITO: ");
     for (int i = 0; i <= 3; i++) {
@@ -553,43 +554,43 @@ void imprimir() {
         //numero_9 ();
         cont = 10;
     }
-} // end imprimir
+   } // end imprimir
 
 // === incrementa ==================================================================
-void incrementa() {
-    dmd.clearScreen();
-    delay(10);
-    if (pos_dig == 0) {
-        dig_0 = dig_0 + 1;
-        EEPROM.write(0, dig_0);
-    }
-    if (dig_0 > 9) {
-        dig_0 = 0;
-        EEPROM.write(0, dig_0);
-    }
-    // imprimir(); // INFORMA VIA SERIAL A INFORMAÇAO ATUALIZADA
-}
+    void incrementa() {
+        dmd.clearScreen();
+        delay(10);
+        if (pos_dig == 0) {
+            dig_0 = dig_0 + 1;
+            EEPROM.write(0, dig_0);
+        }
+        if (dig_0 > 9) {
+            dig_0 = 0;
+            EEPROM.write(0, dig_0);
+        }
+        // imprimir(); // INFORMA VIA SERIAL A INFORMAÇAO ATUALIZADA
+     }
 
 // === digito ======================================================================
-void digito() {
-    pos_dig = pos_dig + 1;
-    address = pos_dig;
-    contXY = -4; // posicao no display
-    if (pos_dig > 3) {
-        pos_dig = 0;
-        contXY = -4; // posicao no display
-        address = pos_dig;
+  void digito() {
+      pos_dig = pos_dig + 1;
+      address = pos_dig;
+      contXY = - 4; // posicao no display
+      if (pos_dig > 3) {
+          pos_dig = 0;
+          contXY = -4; // posicao no display
+          address = pos_dig;
+      }
+      startMillis = currentMillis;
+      if (pos_dig == 0) {
+          //digitalWrite(bt3, HIGH); //ATIVA EDITAR VALOR NO ESCRAVO
+          dmd.setPixel(3, 3, GRAPHICS_ON);
+      }
+      Serial.println(" ");
+      Serial.print("endereco DIGITO: ");
+      Serial.print(address + 1);
+      Serial.println(" ");
     }
-    startMillis = currentMillis;
-    if (pos_dig == 0) {
-        //digitalWrite(bt3, HIGH); //ATIVA EDITAR VALOR NO ESCRAVO
-        dmd.setPixel(3, 3, GRAPHICS_ON);
-    }
-    Serial.println(" ");
-    Serial.print("endereco DIGITO: ");
-    Serial.print(address + 1);
-    Serial.println(" ");
-}
 
 // === numero_0 ====================================================================
 void numero_0(int m_x_I, int m_x_F, int m_y_I, int m_y_F, int dig) {
