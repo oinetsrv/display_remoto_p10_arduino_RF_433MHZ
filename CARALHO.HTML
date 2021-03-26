@@ -1,3 +1,31 @@
 CONSEGUI
 PULL BUSCA DO GITHUB
 COMO ENVIA POR PUSH DEPOIS APLIQUE COMMIT
+<<<<<<< HEAD
+COMO ENVIA POR PUSH
+Para add novo raspberry no git depois de instalar o git e o vc code 
+sudo apt install git
+depois 
+no site do GITHUB
+vai em usuario settings
+procure por ssh e gpg
+cria nova chave ( a criação da chave é feita na maquina e add no site)
+
+instale no pc
+sudo apt install openssh-client 
+gere a chave
+ssh-keygen -t rsa - C oinetsrv@gmail.com 
+gera a chave
+nao coloque senha
+enter 2 vezes entao
+
+para ver a chave ache onde está o id_rsa e Id_rsa.pub 
+começa com SSh e termina com o email
+no site cole essa chave e de um nome para essa chave no site associando a chave ao pc!
+
+
+para testar se a chave está valida no site 
+no pc execute
+ssh -T git@github.com
+PRessione yes
+agora está autenticado
