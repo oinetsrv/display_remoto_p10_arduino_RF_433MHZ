@@ -263,44 +263,46 @@ void loop() {
        //matrix.drawPixel(X, Y, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
       int    buf_verde = cor_verde;
       int    buf_verm = cor_vermelho;
+              cor_vermelho=buf_verde;
+              cor_verde = buf_verm;
         //----seta lado direito----
       // desenhando ponto a ponto biblioteca bruta
-            for (int i = 0; i < 7; ++i)
-            {
-              matrix.drawPixel(x+2+i, y+7-i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
-              matrix.drawPixel(x+3+i, y+7-i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
-              matrix.drawPixel(x+4+i, y+7-i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
-            }
 
-      //cor_vermelho=buf_verde;
-      //cor_verde = buf_verm;
       //---- seta lado esquerdo----
-            for (int i = 0; i < 7; ++i)
-            {
-              matrix.drawPixel(x+2+i, y+8+i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
-              matrix.drawPixel(x+3+i, y+8+i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
-              matrix.drawPixel(x+4+i, y+8+i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
-            }
+        for (int i = 0; i < 7; ++i)
+         {
+          matrix.drawPixel(x+2+i, y+8+i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
+          matrix.drawPixel(x+3+i, y+8+i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
+          matrix.drawPixel(x+4+i, y+8+i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
+         }
 
        for (int i = 0; i < 11; ++i)
        {
           matrix.drawPixel(x+4+i, y+8, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
           matrix.drawPixel(x+4+i, y+9, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
        }
-  
-      cor_vermelho=buf_verm ;
-      cor_verde = buf_verde;
-       for (int i = 0; i < 11; ++i)
-       {
- 
-          matrix.drawPixel(x+4+i, y+6, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
-          matrix.drawPixel(x+4+i, y+7, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
-      }
+        cor_vermelho=buf_verm;
+        cor_verde = buf_verde;
+            for (int i = 0; i < 7; ++i)
+            {
+                matrix.drawPixel(x+2+i, y+7-i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
+                matrix.drawPixel(x+3+i, y+7-i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
+                matrix.drawPixel(x+4+i, y+7-i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
+            }
+          for (int i = 0; i < 11; ++i)
+          {
+   
+              matrix.drawPixel(x+4+i, y+6, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
+              matrix.drawPixel(x+4+i, y+7, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
+          }
+
+
       delay(50);
       if (x==7||x==5||x==3||x==2)
       {
         matrix.fillScreen(0);
       }
+
     }
       
       delay(10);
@@ -375,6 +377,8 @@ void loop() {
   void pare_X(){
       int    buf_verde = cor_verde;
       int    buf_verm = cor_vermelho;
+            cor_vermelho=buf_verde;
+            cor_verde = buf_verm;
         //----seta lado direito----
       // desenhando ponto a ponto biblioteca bruta
             for (int i = 0; i < 7; ++i)
@@ -393,8 +397,8 @@ void loop() {
               matrix.drawPixel(x+17+i, y+7-i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
               matrix.drawPixel(x+18+i, y+7-i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
             }
-      //cor_vermelho=buf_verde;
-      //cor_verde = buf_verm;
+      cor_verde = buf_verde;
+      cor_vermelho = buf_verm;
             for (int i = 0; i < 7; ++i)
             {
               matrix.drawPixel(x+14+i, y+8+i, matrix.Color333(cor_vermelho,cor_azul,cor_verde));
