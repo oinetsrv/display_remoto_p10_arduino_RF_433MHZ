@@ -1,0 +1,54 @@
+LABCENTER PROTEUS TOOL INFORMATION FILE
+=======================================
+
+In case of difficulty, please e-mail support@labcenter.co.uk
+
+Tool set up for Proteus layout 'PCB-DISPLAY-433-ATMEGA328P-10.pdsprj'.
+CADCAM generated at 07:31:15 on quinta-feira, 29 de abril de 2021.
+
+File List
+---------
+Top Copper              : PCB-DISPLAY-433-ATMEGA328P-10 - CADCAM Top Copper.TXT
+Bottom Copper           : PCB-DISPLAY-433-ATMEGA328P-10 - CADCAM Bottom Copper.TXT
+Top Silk Screen         : PCB-DISPLAY-433-ATMEGA328P-10 - CADCAM Top Silk Screen.TXT
+Bottom Silk Screen      : PCB-DISPLAY-433-ATMEGA328P-10 - CADCAM Bottom Silk Screen.TXT
+Top Solder Resist       : PCB-DISPLAY-433-ATMEGA328P-10 - CADCAM Top Solder Resist.TXT
+Bottom Solder Resist    : PCB-DISPLAY-433-ATMEGA328P-10 - CADCAM Bottom Solder Resist.TXT
+Mechanical 1            : PCB-DISPLAY-433-ATMEGA328P-10 - CADCAM Mechanical 1.TXT
+Drill                   : PCB-DISPLAY-433-ATMEGA328P-10 - CADCAM Drill.TXT
+
+Photoplotter Setup
+------------------
+Format: RS274X, ASCII, 2.4, imperial, absolute, eob=*, LZO
+Notes:  D=Diameter, S=Side, W=Width, H=Height, C=Chamfer
+
+D10	CIRCLE  D=1.02mm                                                          DRAW
+D11	CIRCLE  D=1.02mm                                                          FLASH
+D12	CIRCLE  D=1.52mm                                                          FLASH
+D13	CIRCLE  D=0.0635mm                                                        DRAW
+D14	CIRCLE  D=2.54mm                                                          FLASH
+D15	CIRCLE  D=2.03mm                                                          FLASH
+D16	CIRCLE  D=1.78mm                                                          FLASH
+D17	SQUARE  S=2.03mm                                                          FLASH
+D18	SQUARE  S=1.78mm                                                          FLASH
+D19	CIRCLE  D=3.81mm                                                          FLASH
+D70	CIRCLE  D=0.2mm                                                           DRAW
+D71	CIRCLE  D=3.3mm                                                           FLASH
+D20	CIRCLE  D=2.29mm                                                          FLASH
+D21	SQUARE  S=2.54mm                                                          FLASH
+D22	SQUARE  S=2.29mm                                                          FLASH
+D23	CIRCLE  D=4.57mm                                                          FLASH
+
+NC Drill Setup
+--------------
+Format: ASCII, 2.4, imperial, absolute, eob=<CR><LF>, no zero suppression.
+Notes:  Tool sizes are diameters. Layer sets are in brackets - 0=TOP, 15=BOTTOM, 1-14=INNER.
+
+T01	0.38mm (0-15)
+T02	0.51mm (0-15)
+T03	1.52mm (0-15)
+T04	0.76mm (0-15)
+T05	1.02mm (0-15)
+
+
+[END OF FILE]
