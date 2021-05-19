@@ -133,7 +133,11 @@ A apresenta <-  VERDE
   // --- Loop Infinito ---
   void loop() {
       readKey();
-      delay(100);   
+      delay(1000);  
+      seta_subir();
+      delay(1000); 
+      seta_descer();
+      delay(1000); 
   } //end loop
 
  // === readKey =====================================================================
