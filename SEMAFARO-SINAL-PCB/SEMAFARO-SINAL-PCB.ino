@@ -120,11 +120,12 @@ A apresenta <-  VERDE
       pinMode(VD1, OUTPUT); // 
       pinMode(VD2, OUTPUT); // 
 
-      digitalWrite(VM2, LOW);
-      digitalWrite(VM1, LOW);
+      digitalWrite(VM2, HIGH);
+      digitalWrite(VM1, HIGH);
+      delay(100); 
       digitalWrite(VD1, LOW);
       digitalWrite(VD2, LOW);
-        delay(100); 
+      delay(200); 
                             // wait for a second
       
   } //end setup
@@ -133,11 +134,12 @@ A apresenta <-  VERDE
   // --- Loop Infinito ---
   void loop() {
       readKey();
-      delay(1000);  
-      seta_subir();
-      delay(1000); 
-      seta_descer();
-      delay(1000); 
+      delay(100);
+      //delay(1000);  
+      //seta_subir();
+      //delay(1000); 
+      //seta_descer();
+     // delay(1000); 
   } //end loop
 
  // === readKey =====================================================================
@@ -271,4 +273,3 @@ A apresenta <-  VERDE
       digitalWrite(VD2, LOW);
       delay(100);
   }// fim off_X
-
