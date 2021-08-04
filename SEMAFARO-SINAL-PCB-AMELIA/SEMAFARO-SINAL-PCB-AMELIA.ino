@@ -136,6 +136,7 @@ void read_bts() {
     if (digitalRead(bt1) && bt1_flag && !flag1) {
         bt1_flag = 0x00;
         flag1 = !flag1; //inverter flag
+        flag3 = 0;
         desliga_tudo();
         // interno entrada
         digitalWrite(VM_int_ENT, LOW);  // vermelho interno entrada  LIGADO
@@ -154,6 +155,7 @@ void read_bts() {
     if (digitalRead(bt1) && bt1_flag && flag1) {
         bt1_flag = 0x00;
         flag1 = !flag1; //inverter flag
+        flag3 = 0;
         desliga_tudo();
         // interno entrada
         digitalWrite(VM_int_ENT, HIGH);  // vermelho interno entrada  desligado
@@ -179,6 +181,8 @@ void read_bts() {
     if (digitalRead(bt2) && bt2_flag && flag2) {
         bt2_flag = 0x00;
         flag2 = !flag2; //inverter flag
+        flag1 = 0;
+        flag3 = 0;
         desliga_tudo();
         // interno entrada
         digitalWrite(VM_int_ENT, LOW);  // vermelho interno entrada   LIGADO
@@ -200,6 +204,7 @@ void read_bts() {
     if (digitalRead(bt3) && bt3_flag && !flag3) {
         bt3_flag = 0x00;
         flag3 = !flag3; //inverter flag
+        flag1 = 0;
         desliga_tudo();
         // interno entrada
         digitalWrite(VM_int_ENT, LOW);  // vermelho interno entrada   LIGADO
