@@ -54,14 +54,14 @@ Projeto: Semáforo BALANÇA RODOVIÁRIA 4 unidades
 #define bt2 6 //  
 #define bt3 7 //  
 
-#define VM_ext_SAI 3 // VERDE-3
-#define VM_ext_ENT 4 // VERDE-4
-#define VD_ext_SAI 8 // VERDE-3
-#define VD_ext_ENT 9 // VERDE-4
-#define VM_int_SAI 10 // VERMELHO 2
+#define VM_ext_SAI 3 // placa 2 vermelho externo saida      pino 5
+#define VM_ext_ENT 4 // placa 2 vermelho externo entrada    pino 6
+#define VD_ext_SAI 8 // placa 2 verde externo saida         pino 14
+#define VD_ext_ENT 9 // placa 2 verde externo entrada       pino 15
+#define VM_int_SAI 10 // vermelho interno saida
 #define VM_int_ENT 11 // vermelho interno entrada
-#define VD_int_ENT 12 // VERDE-2
-#define VD_int_SAI 13 // VERDE-1
+#define VD_int_ENT 12 // verde interno entrada
+#define VD_int_SAI 13 // verde interno saida 
 
 // === --- Instâncias --- ==========================================================
 // --- Instâncias ---
